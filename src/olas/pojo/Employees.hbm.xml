@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2019 11:19:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="olas.pojo.Employees" table="employees" catalog="stockmgtdb" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="firstName" length="50" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" length="50" />
+        </property>
+        <property name="passwords" type="string">
+            <column name="passwords" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="20" />
+        </property>
+        <property name="createdDate" type="string">
+            <column name="createdDate" length="50" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

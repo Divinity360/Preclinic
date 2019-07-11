@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login Page</title>
+        <!--<link href=".../resources/ExternStyleSheet.css" rel="stylesheet" type="text/css"/>-->
+    </h:head>
+    <h:body style="background:  blanchedalmond">
+               
+        <h:form>
+            <div style="font-family: Arial, sans-serif;  color:navy;">                                        
+                <h3 align="center" style ="padding: 10px">
+                    <h:outputText style="alignment-baseline: central" value="#{employeeLoginController.email_Error}" id="errorEmail"/>                                                  
+                </h3>                                        
+            </div>  
+            
+            <div style="background: burlywood; width: 450px; height: 380px; margin: 85px auto; font-family: Arial">
+             <h1 style="color: navy; text-align: center; padding-top: 20px">LOGIN</h1>            
+            <h:inputText id="name" pt:placeholder="Enter Email" value="#{employeeLoginController.email}"  style="padding: 15px; margin: 10px 20px 10px 50px; width: 300px "/><br/>
+            <h:inputText id="password" pt:placeholder="Enter Password" value="#{employeeLoginController.password}" style="padding: 15px; margin: 10px 20px 10px 50px; width: 300px " /><br/><br/>
+            <p:commandButton value="Login"  ajax="true" update="errorEmail" action="#{employeeLoginController.submitAction()}" style="margin: 0px 0px 5px 50px; background: navy; padding: 5px; color: white; border: 2px solid chocolate; padding: 13px 68px 13px 68px; font-size:20px; width: 330px "/> <br/><br/>
+            <h:commandLink action="employee.xhtml" value="Click to Register Employee" style=" margin-left:100px; color: navy; text-decoration: none;  font-family: Arial" /><br/>
+        </div>            
+            
+        </h:form>        
+    </h:body>
+</html>

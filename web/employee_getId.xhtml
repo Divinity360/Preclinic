@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register Page</title>
+    </h:head>
+    <h:body style="font-family: Arial; background: blanchedalmond">
+        <h1 style="text-align:  center; color: navy; margin: 20px ">Employee Email</h1>
+        <h:form>
+            <div style="background: burlywood; width: 800px; height: 250px; margin: 50px auto; font-family: Arial; padding: 10px">
+
+                <table>
+                <br/><br/>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Enter Email"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>                    
+                </tr>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:inputText id="email" value="#{employeeController.email}"  style="padding:10px; width:400px "/></td> 
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>                    
+                </tr>           
+                <tr><td><br/></td></tr>                
+            </table>
+            <table>
+                <tr><td><br/></td></tr>
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;<h:commandButton value="DONE"  action="#{employeeController.getEmployeeDetailsByID()}"  style="margin: 0px 0px 5px 45px; background: navy; color: white; border: 2px solid chocolate; padding: 10px 58px 10px 58px; font-size:20px; width:310px"/>
+                    </td>                    
+                </tr>                     
+            </table>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>
+

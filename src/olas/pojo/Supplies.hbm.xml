@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2019 11:19:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="olas.pojo.Supplies" table="supplies" catalog="stockmgtdb" optimistic-lock="version">
+        <id name="itemCode" type="string">
+            <column name="itemCode" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employees" class="olas.pojo.Employees" fetch="select">
+            <column name="email" length="30" />
+        </many-to-one>
+        <property name="itemName" type="string">
+            <column name="itemName" length="50" />
+        </property>
+        <property name="itemType" type="string">
+            <column name="itemType" length="30" />
+        </property>
+        <property name="supplyName" type="string">
+            <column name="supplyName" length="50" />
+        </property>
+        <property name="supplyEmail" type="string">
+            <column name="supplyEmail" length="30" />
+        </property>
+        <property name="supplyPhone" type="string">
+            <column name="supplyPhone" length="30" />
+        </property>
+        <property name="unitPrice" type="java.lang.Double">
+            <column name="unitPrice" precision="10" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="quantity" />
+        </property>
+        <property name="totalPrice" type="java.lang.Double">
+            <column name="totalPrice" precision="10" />
+        </property>
+        <property name="manufacturedDate" type="string">
+            <column name="manufacturedDate" length="30" />
+        </property>
+        <property name="expireDate" type="string">
+            <column name="expireDate" length="30" />
+        </property>
+        <property name="receiveDate" type="string">
+            <column name="receiveDate" length="30" />
+        </property>
+        <property name="createdDate" type="string">
+            <column name="createdDate" length="50" />
+        </property>
+        <set name="usageses" table="usages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="itemCode" length="20" />
+            </key>
+            <one-to-many class="olas.pojo.Usages" />
+        </set>
+    </class>
+</hibernate-mapping>

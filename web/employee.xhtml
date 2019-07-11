@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Employee Page</title>
+    </h:head>
+    <h:body style="font-family: Arial; background: blanchedalmond">
+        <h1 style="text-align:  center; color: navy; margin: 20px "> Employee Form</h1>
+        <h:form>
+            <div style="background: burlywood; width: 800px; height: 350px; margin: 50px auto; font-family: Arial; padding: 10px">
+                <div>
+                        <h2 style="text-align: center; color: red;"><h:outputLabel value="#{employeeController.mgsError}" id="mgs_erro"/></h2>                                                
+                 </div>
+
+                <table>
+                <br/><br/>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Email"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="First Name"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Last Name"/></td>
+                </tr>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:inputText id="email" value="#{employeeController.email}"  style="padding:10px; width:200px "/></td> 
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="fName" value="#{employeeController.firstName}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="lName" value="#{employeeController.lastName}"  style="padding:10px; width:200px "/></td>
+                </tr>           
+                <tr><td><br/></td></tr>                
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Password"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Phone"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Position"/></td>
+                </tr>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:inputSecret id="pwd" value="#{employeeController.passwords}"  style="padding:10px; width:200px "/></td> 
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="phone" value="#{employeeController.phone}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="position" value="#{employeeController.position}"  style="padding:10px; width:200px "/></td>
+                </tr>           
+                <tr><td><br/></td></tr>                
+            </table>
+            <table>
+                <tr><td><br/></td></tr>
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;<h:commandButton value="SUBMIT"  action="#{employeeController.save()}"  style="margin: 0px 0px 5px 45px; background: navy; color: white; border: 2px solid chocolate; padding: 10px 58px 10px 58px; font-size:20px; width:310px"/>
+                    </td>
+                    <td>
+                        <h:commandButton value="ALTER"  action="employee_getId.xhtml"  style="margin: 0px 0px 5px 50px; background: navy; color: white; border: 2px solid chocolate; padding: 10px 58px 10px 58px; font-size:20px; width:310px"/>
+                    </td>
+                </tr>                     
+            </table>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>
+

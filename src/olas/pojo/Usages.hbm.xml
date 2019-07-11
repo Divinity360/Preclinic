@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2019 11:19:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="olas.pojo.Usages" table="usages" catalog="stockmgtdb" optimistic-lock="version">
+        <id name="usageCode" type="string">
+            <column name="usageCode" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employees" class="olas.pojo.Employees" fetch="select">
+            <column name="email" length="30" />
+        </many-to-one>
+        <many-to-one name="supplies" class="olas.pojo.Supplies" fetch="select">
+            <column name="itemCode" length="20" />
+        </many-to-one>
+        <property name="usageQuantity" type="java.lang.Integer">
+            <column name="usageQuantity" />
+        </property>
+        <property name="usageDate" type="string">
+            <column name="usageDate" length="30" />
+        </property>
+        <property name="createdDate" type="string">
+            <column name="createdDate" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

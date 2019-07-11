@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="hibernate.cfg.xml" value="ab917707-8139-4d77-a227-6b591f0ded72" />
+          <unit-entry name="sessionFactory" value="9ba3a69d-b666-40ca-974f-d0855393a262" />
+        </datasource-map>
+        <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
+      </configuration>
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/web" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:Release" level="project" />
+    <orderEntry type="library" name="Hibernate 5.4.2-5.4.2" level="project" />
+    <orderEntry type="library" name="Spring-4.3.18.RELEASE" level="project" />
+    <orderEntry type="library" name="Spring Data JPA-1.3.3" level="project" />
+    <orderEntry type="library" name="Spring Security-3.2.5" level="project" />
+    <orderEntry type="library" name="Spring Integration-4.0.3" level="project" />
+    <orderEntry type="library" name="Spring Webflow-2.4.0" level="project" />
+    <orderEntry type="library" name="Spring Web Services-2.0.2" level="project" />
+    <orderEntry type="library" name="Spring Batch-2.2.6" level="project" />
+    <orderEntry type="library" name="Spring MVC-4.3.18.RELEASE" level="project" />
+    <orderEntry type="library" name="javax.faces-2.4.0" level="project" />
+    <orderEntry type="library" name="javax.inject-1" level="project" />
+    <orderEntry type="library" name="primefaces-6.2" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.23-bin" level="project" />
+    <orderEntry type="library" name="cdi-api-1.2" level="project" />
+    <orderEntry type="library" name="org.hibernate:hibernate-c3p0:5.4.2.Final" level="project" />
+    <orderEntry type="library" name="org.hibernate:hibernate-entitymanager:5.4.2.Final" level="project" />
+    <orderEntry type="library" name="org.omnifaces:omnifaces:3.3" level="project" />
+  </component>
+</module>

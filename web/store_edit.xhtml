@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Store Page</title>
+    </h:head>
+    <h:body style="font-family: Arial; background: blanchedalmond">
+        <h1 style="text-align:  center; color: navy; margin: 20px "> Edit Store Form</h1>
+        <h:form>
+            <div style="background: burlywood; width: 800px; height: 500px; margin: 30px auto; font-family: Arial; padding: 10px">
+                <div>
+                        <h2 style="text-align: center; color: red;"><h:outputLabel value="#{suppliesController.mgsError}" id="mgs_erro"/></h2>                                                
+                 </div>                 
+                <table>
+                    <br/><br/>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Item Code"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Supplied Received By"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Item Name"/></td>
+                </tr>                    
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:inputText id="itemC" value="#{suppliesController.itemCodes}" style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <h:selectOneMenu id='empE'  value="#{suppliesController.empEmail}" required="true" requiredMessage="You must Select Employee Name" style="padding:10px; width:200px ">                                                 
+                            <f:selectItem itemLabel="Select Employee Name"  itemValue=""/>
+                            <f:selectItems   value="#{employeeController.getEmployeeDetails()}" var="e" itemLabel="#{e.firstName} #{e.lastName}" itemValue="#{e.email}"/> 
+                        </h:selectOneMenu>                        
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="itemN" value="#{suppliesController.itemName}"  style="padding:10px; width:200px "/></td>
+                </tr>           
+                <tr><td><br/></td></tr>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Item Type"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Supplier Email"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Supplier Name"/></td>
+                </tr>                
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h:selectOneMenu value="#{suppliesController.itemType}" style="padding:10px; width:200px ">
+                            <f:selectItem itemLabel="Select Item Type" itemValue=""/>
+                            <f:selectItem itemLabel="White Flour" itemValue="White Flour"/>
+                            <f:selectItem itemLabel="Vegetable Oil" itemValue="Vegetable Oil"/>
+                            <f:selectItem itemLabel="Geen Vegetable" itemValue="Geen Vegetable"/>
+                            <f:selectItem itemLabel="Pepper" itemValue="Pepper"/>
+                        </h:selectOneMenu>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="sEmail" value="#{suppliesController.supplyEmail}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="sName" value="#{suppliesController.supplyName}"  style="padding:10px; width:200px "/></td>
+                </tr>           
+                <tr><td><br/></td></tr>
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Supplier Phone"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Unit Price"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Quantity"/></td>
+                </tr>                    
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:inputText id="sPhone" value="#{suppliesController.supplyPhone}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="unP" value="#{suppliesController.unitPrice}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="qty" value="#{suppliesController.quantity}"  style="padding:10px; width:200px "/></td>
+                </tr>           
+                <tr><td><br/></td></tr>                
+                <tr>                    
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Manufacture Date"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Expire Date"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:outputText value="Receive Date"/></td>
+                </tr>                    
+                <tr>
+                    <td>&nbsp;&nbsp;<h:inputText id="manu" value="#{suppliesController.manufacturedDate}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText  id="exp" value="#{suppliesController.expireDate}"  style="padding:10px; width:200px "/></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h:inputText id="rec" value="#{suppliesController.receiveDate}"  style="padding:10px; width:200px "/></td>
+                </tr>
+            </table>
+            <table>
+                <tr><td><br/></td></tr>
+                <tr>
+                    <td>
+                        <h:commandButton value="ALTER"  action="#{suppliesController.updateSupply()}"  style="margin: 0px 0px 5px 45px; background: navy; color: white; border: 2px solid chocolate; padding: 10px 58px 10px 58px; font-size:20px; width:200px"/>
+                    </td>
+                    <td>
+                        <h:commandButton value="DELETE"  action="#{suppliesController.deleteSupply()}"  style="margin: 0px 0px 5px 45px; background: navy; color: white; border: 2px solid chocolate; padding: 10px 58px 10px 58px; font-size:20px; width:200px"/>
+                    </td>
+                    <td>
+                        <h:commandButton value="REPORT"  action="store_report.xhtml"  immediate="true" style="margin: 0px 0px 5px 50px; background: navy; color: white; border: 2px solid chocolate; padding: 10px 58px 10px 58px; font-size:20px; width:200px"/>
+                    </td>
+                </tr>                    
+            </table>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>
+

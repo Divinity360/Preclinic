@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Register Page</title>
+    </h:head>
+    <h:body style="font-family: Arial; background: blanchedalmond; font-size: 12px">
+        
+        <h:form>
+            <div >                                            
+                     <p:outputLabel value="STORE RECORDS LIST"  style="font-size:25px;  color: navy; margin-left: 550px" />                                            
+            </div>
+                    <br/>                                        
+                    <p:dataTable id="rmTable" binding="#{table}" value="#{suppliesController.getSupplyDetails()}" var="s" rowKey="#{suppliesController.itemCode}" rows="20" 
+                                 paginator="true" >                                                                                                
+
+                        <p:column  headerText="ID" width="3%">                                                
+                            <h:outputText value="#{table.rowIndex + 1}" />
+                        </p:column>
+
+                        <p:column headerText="Item Code" width="9%" filterBy="#{s.itemCode}"  filterMatchMode="contains">                                                
+                            <h:outputText value="#{s.itemCode}" />
+                        </p:column>
+
+                        <p:column headerText="Supplied Received By" width="12%" filterBy="#{s.employees.email}"  filterMatchMode="contains">                                                
+                            <h:outputText value="#{s.employees.email}"/>
+                        </p:column>
+
+                        <p:column headerText="Item Name" width="8%" filterBy="#{s.itemName}"  filterMatchMode="contains">                                                
+                            <h:outputText value="#{s.itemName}" />
+                        </p:column>
+
+                        <p:column headerText="Supply Name" width="8%" filterBy="#{s.supplyName}"  filterMatchMode="contains">                                                
+                        <h:outputText value="#{s.supplyName}" />
+                        </p:column>
+
+                        <p:column headerText="Supply Email" width="12%" filterBy="#{s.supplyEmail}"  filterMatchMode="contains">                                                
+                            <h:outputText value="#{s.supplyEmail}" />
+                        </p:column>
+
+                        <p:column headerText="Unit Price" filterBy="#{s.unitPrice}"  filterMatchMode="contains">                                               
+                            <h:outputText value="#{s.unitPrice}" />
+                        </p:column>
+
+                        <p:column headerText="Qty" filterBy="#{s.quantity}"  filterMatchMode="contains">                                              
+                            <h:outputText value="#{s.quantity}" />
+                        </p:column>
+
+                        <p:column headerText="Total " filterBy="#{s.totalPrice}"  filterMatchMode="contains">                                              
+                            <h:outputText value="#{s.totalPrice}" />
+                        </p:column>
+
+                        <p:column headerText="Manu Date" width="8%" filterBy="#{s.manufacturedDate}"  filterMatchMode="contains">                                                
+                            <h:outputText value="#{s.manufacturedDate}"/>
+                        </p:column>
+
+                        <p:column headerText="Exp Date" width="8%" filterBy="#{s.expireDate}"  filterMatchMode="contains">                                                
+                            <h:outputText value="#{s.expireDate}"/>
+                        </p:column>
+
+                        <p:column headerText="Rec Date" width="8%" filterBy="#{s.receiveDate}"  filterMatchMode="contains">                                               
+                            <h:outputText value="#{s.receiveDate}"/>
+                        </p:column>
+
+
+                        <p:column headerText="Date" width="8%" filterBy="#{s.createdDate}"  filterMatchMode="contains">                                               
+                            <h:outputText value="#{s.createdDate}"/>
+                        </p:column>                                                                                   
+
+                   </p:dataTable>                                                    
+        </h:form>
+    </h:body>
+</html>
+
